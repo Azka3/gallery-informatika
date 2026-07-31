@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Website resmi kelas Informatika 2024 – Universitas Al-Ghifari. Galeri foto anggota, rutinitas kegiatan, dan informasi kampus." />
+  <title>Gallery Informatika 2024 – Unfari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ─────────────── NAVBAR ─────────────── -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="nav-logo-sub">Gallery</span>
+        <span class="nav-logo-main">Informatika</span>
+      </a>
+      <nav class="nav-links" id="nav-links">
+        <a href="#people" class="nav-link" id="nav-people">People</a>
+        <a href="#rutinitas" class="nav-link" id="nav-rutinitas">Rutinitas</a>
+        <a href="#university" class="nav-link" id="nav-university">University</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile overlay menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#people" class="mobile-link" id="mob-people">People</a>
+    <a href="#rutinitas" class="mobile-link" id="mob-rutinitas">Rutinitas</a>
+    <a href="#university" class="mobile-link" id="mob-university">University</a>
+  </div>
+
+  <!-- ─────────────── HERO ─────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <span class="hero-eyebrow reveal">GALLERY</span>
+      <h1 class="hero-title reveal reveal-delay-1">Informatika</h1>
+      <p class="hero-subtitle reveal reveal-delay-2">"6 orang bisa merubah dunia"</p>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ─────────────── PEOPLE ─────────────── -->
+  <section class="section people-section" id="people">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Anggota</span>
+      <h2 class="section-title">People</h2>
+    </div>
+
+    <div class="people-grid">
+      <!-- Member 1 -->
+      <div class="person-card reveal" style="--delay:0.0s" data-member="0">
+        <div class="person-photo-wrap">
+          <img src="gallery/Wisnuu.png" alt="Anggota 1" class="person-photo" loading="lazy" />
+          <div class="person-overlay">
+            <span class="person-overlay-icon">&#43;</span>
+          </div>
+        </div>
+      </div>
+      <!-- Member 2 -->
+      <div class="person-card reveal" style="--delay:0.1s" data-member="1">
+        <div class="person-photo-wrap">
+          <img src="/gallery/azka.jpg" alt="Anggota 2" class="person-photo" loading="lazy" />
+          <div class="person-overlay">
+            <span class="person-overlay-icon">&#43;</span>
+          </div>
+        </div>
+      </div>
+      <!-- Member 3 -->
+      <div class="person-card reveal" style="--delay:0.2s" data-member="2">
+        <div class="person-photo-wrap">
+          <img src="/gallery/farhan.jpg" alt="Anggota 3" class="person-photo" loading="lazy" />
+          <div class="person-overlay">
+            <span class="person-overlay-icon">&#43;</span>
+          </div>
+        </div>
+      </div>
+      <!-- Member 4 -->
+      <div class="person-card reveal" style="--delay:0.3s" data-member="3">
+        <div class="person-photo-wrap">
+          <img src="/gallery/rifky.jpg" alt="Anggota 4" class="person-photo" loading="lazy" />
+          <div class="person-overlay">
+            <span class="person-overlay-icon">&#43;</span>
+          </div>
+        </div>
+      </div>
+      <!-- Member 5 -->
+      <div class="person-card row2 reveal" style="--delay:0.4s" data-member="4">
+        <div class="person-photo-wrap">
+          <img src="https://placehold.co/400x500/2c2c54/ffffff?text=Sendi" alt="Anggota 5" class="person-photo"
+            loading="lazy" />
+          <div class="person-overlay">
+            <span class="person-overlay-icon">&#43;</span>
+          </div>
+        </div>
+      </div>
+      <!-- Member 6 -->
+      <div class="person-card row2 reveal" style="--delay:0.5s" data-member="5">
+        <div class="person-photo-wrap">
+          <img src="https://placehold.co/400x500/474787/ffffff?text=Helsa" alt="Anggota 6" class="person-photo"
+            loading="lazy" />
+          <div class="person-overlay">
+            <span class="person-overlay-icon">&#43;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── RUTINITAS ─────────────── -->
+  <section class="section rutinitas-section" id="rutinitas">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Kegiatan</span>
+      <h2 class="section-title">Rutinitas Kita</h2>
+    </div>
+
+    <div class="rutinitas-grid" id="rutinitas-grid">
+      <div class="rut-card rut-wide reveal" style="--delay:0.0s">
+        <img src="/aktifitas/1.jpg" alt="Kegiatan 1" loading="lazy" />
+      </div>
+      <div class="rut-card rut-tall reveal" style="--delay:0.1s">
+        <img src="/aktifitas/3.jpg" alt="Kegiatan 2" loading="lazy" />
+      </div>
+      <div class="rut-card reveal" style="--delay:0.2s">
+        <img src="/aktifitas/2.jpg" alt="Kegiatan 3" loading="lazy" />
+      </div>
+      <div class="rut-card reveal" style="--delay:0.3s">
+        <img src="/aktifitas/4.jpg" alt="Kegiatan 4" loading="lazy" />
+      </div>
+      <div class="rut-card reveal" style="--delay:0.4s">
+        <img src="/aktifitas/5.jpg" alt="Kegiatan 5" loading="lazy" />
+      </div>
+      <div class="rut-card reveal" style="--delay:0.5s">
+        <img src="/aktifitas/6.jpg" alt="Kegiatan 6" loading="lazy" />
+      </div>
+      <!-- Hidden extras -->
+      <div class="rut-card rut-extra hidden-card reveal" style="--delay:0.0s">
+        <img src="/aktifitas/7.jpg" alt="Kegiatan 7" loading="lazy" />
+      </div>
+      <div class="rut-card rut-extra hidden-card reveal" style="--delay:0.1s">
+        <img src="/aktifitas/8.jpg" alt="Kegiatan 8" loading="lazy" />
+      </div>
+      <div class="rut-card rut-wide rut-extra hidden-card reveal" style="--delay:0.2s">
+        <img src="/aktifitas/9.png" alt="Kegiatan 9" loading="lazy" />
+      </div>
+    </div>
+
+    <div class="lihat-more-wrap reveal">
+      <button class="btn-lihat" id="btn-lihat-lainya">
+        <span class="btn-arrow">&rsaquo;</span>
+        Lihat Lainya
+        <span class="btn-arrow">&lsaquo;</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ─────────────── UNIVERSITY ─────────────── -->
+  <section class="section university-section" id="university">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Kampus Kami</span>
+      <h2 class="section-title">
+        Mahasiswa dari<br />
+        Universitas <span class="highlight">Al-Ghifari</span>
+      </h2>
+    </div>
+
+    <div class="unfari-logo-wrap reveal">
+      <a class="unfari-logo-box" href="https://unfari.ac.id" target="_blank" rel="noopener"
+        title="Kunjungi website Universitas Al-Ghifari">
+        <div class="unfari-logo-icon">🎓</div>
+        <div class="unfari-logo-text">
+          <span class="unfari-u">U</span><span class="unfari-rest">nfari</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="campus-photo-wrap reveal">
+      <img src="gallery/unfari.jpg" alt="Gedung Universitas Al-Ghifari" class="campus-photo" loading="lazy" />
+      <div class="campus-photo-overlay">
+        <span class="campus-name-badge">UNIVERSITAS AL-GHIFARI</span>
+      </div>
+    </div>
+
+    <div class="uni-info-grid reveal">
+      <div class="uni-info-card">
+        <span class="uni-info-icon">📚</span>
+        <h3 class="uni-info-title">Prodi Informatika</h3>
+        <p class="uni-info-desc">Program Studi Informatika yang melahirkan talenta teknologi unggulan.</p>
+      </div>
+      <div class="uni-info-card">
+        <span class="uni-info-icon">🏛️</span>
+        <h3 class="uni-info-title">Universitas Al-Ghifari</h3>
+        <p class="uni-info-desc">Kampus berbasis nilai Islam dengan visi pendidikan berkualitas tinggi.</p>
+      </div>
+      <div class="uni-info-card">
+        <span class="uni-info-icon">🌟</span>
+        <h3 class="uni-info-title">Angkatan 2024</h3>
+        <p class="uni-info-desc">Generasi baru informatika yang siap merubah dunia dengan teknologi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── FOOTER ─────────────── -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-brand">INFORMATIKA</span>
+      <span class="footer-sep">·</span>
+      <span class="footer-copy">&copy;2026 ZK Developer</span>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════
+       MEMBER CARD MODAL
+  ════════════════════════════════════════════════ -->
+  <div class="member-modal-backdrop" id="member-modal-backdrop" role="dialog" aria-modal="true"
+    aria-label="Member profile">
+    <div class="member-modal" id="member-modal">
+
+      <!-- Window chrome dots + name -->
+      <div class="mc-titlebar">
+        <div class="mc-dots">
+          <span class="mc-dot mc-dot--red"></span>
+          <span class="mc-dot mc-dot--yellow"></span>
+          <span class="mc-dot mc-dot--green"></span>
+        </div>
+        <span class="mc-titlebar-name" id="mc-fullname">Nama Lengkap</span>
+      </div>
+
+      <!-- Body -->
+      <div class="mc-body">
+        <!-- Left: big photo + name overlay -->
+        <div class="mc-left">
+          <div class="mc-photo-wrap">
+            <img id="mc-photo" src="" alt="Member Photo" />
+            <div class="mc-name-overlay">
+              <span id="mc-firstname" class="mc-firstname">Nama</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: social + bio + signature -->
+        <div class="mc-right">
+          <!-- Social row -->
+          <div class="mc-socials">
+            <a class="mc-social-pill" id="mc-ig" href="#" target="_blank" rel="noopener">
+              <!-- Instagram SVG -->
+              <svg class="mc-social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <circle cx="12" cy="12" r="4.5" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+              </svg>
+              <span class="mc-social-handle" id="mc-ig-handle">@username</span>
+            </a>
+            <a class="mc-social-pill" id="mc-gh" href="#" target="_blank" rel="noopener">
+              <!-- GitHub SVG -->
+              <svg class="mc-social-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+              </svg>
+              <span class="mc-social-handle" id="mc-gh-handle">@username</span>
+            </a>
+            <a class="mc-social-pill" id="mc-li" href="#" target="_blank" rel="noopener">
+              <!-- LinkedIn SVG -->
+              <svg class="mc-social-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              <span class="mc-social-handle" id="mc-li-handle">@username</span>
+            </a>
+          </div>
+
+          <!-- Bio -->
+          <p class="mc-bio" id="mc-bio">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+
+          <!-- Signature + label -->
+          <div class="mc-signature-row">
+            <div class="mc-signature-label">
+              <span id="mc-label">Informatika – Semester 5</span>
+            </div>
+            <div class="mc-signature-wrap">
+              <img id="mc-signature" class="mc-signature-img" src="" alt="Tanda Tangan" />
+              <span class="mc-signature-placeholder" id="mc-sig-placeholder">✍️</span>
+            </div>
+          </div>
+        </div>
+      </div><!-- /mc-body -->
+
+      <!-- Portfolio button -->
+      <a class="mc-portfolio-btn" id="mc-portfolio-btn" href="#" target="_blank" rel="noopener">
+        SEE MY PORTFOLIO
+        <svg class="mc-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </a>
+
+    </div><!-- /member-modal -->
+  </div><!-- /backdrop -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
