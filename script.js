@@ -122,15 +122,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ─── 3. SCROLL REVEAL ─── */
   const revealEls = document.querySelectorAll('.reveal');
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObs.unobserve(entry.target);
-      }
+
+  function revealIfVisible(el) {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('visible');
+      return true;
+    }
+    return false;
+  }
+
+  // Immediately reveal anything already in viewport (fixes blank hero on mobile)
+  requestAnimationFrame(() => {
+    revealEls.forEach(el => revealIfVisible(el));
+  });
+
+  // Use IntersectionObserver for below-fold elements
+  if ('IntersectionObserver' in window) {
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    // threshold:0 = trigger as soon as any pixel is visible (more reliable on old browsers)
+    }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
+    revealEls.forEach(el => {
+      if (!el.classList.contains('visible')) revealObs.observe(el);
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => revealObs.observe(el));
+  } else {
+    // Fallback for browsers without IntersectionObserver: reveal all immediately
+    revealEls.forEach(el => el.classList.add('visible'));
+  }
 
   /* ─── 4. PEOPLE GRID: center row-2 on desktop ─── */
   function buildPeopleGrid() {

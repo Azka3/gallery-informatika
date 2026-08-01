@@ -90,7 +90,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   letter-spacing: -0.02em;
 }
 .nav-links {
+  display: -webkit-flex;
   display: flex;
+  -webkit-gap: 40px;
   gap: 40px;
   align-items: center;
 }
@@ -101,8 +103,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   text-transform: uppercase;
   color: var(--clr-ink-muted);
   position: relative;
+  margin-right: 40px; /* fallback for browsers without flex gap */
   transition: color var(--transition);
 }
+.nav-link:last-child { margin-right: 0; }
 .nav-link::after {
   content: '';
   position: absolute;
