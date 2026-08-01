@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
         existing.remove();
       }
 
-      if (window.innerWidth > 600) {
+      if (window.innerWidth > 768) {
         const allCards = Array.from(grid.querySelectorAll('.person-card'));
         const row2Cards = allCards.slice(4, 6);
         const wrapper = document.createElement('div');
@@ -160,41 +160,44 @@ document.addEventListener('DOMContentLoaded', () => {
   buildPeopleGrid();
 
   /* ─── 5. MEMBER CARD MODAL ─── */
-  const backdrop = document.getElementById('member-modal-backdrop');
-  const mcPhoto = document.getElementById('mc-photo');
-  const mcFullname = document.getElementById('mc-fullname');
+  const backdrop    = document.getElementById('member-modal-backdrop');
+  const mcPhoto     = document.getElementById('mc-photo');
+  const mcFullname  = document.getElementById('mc-fullname');
   const mcFirstname = document.getElementById('mc-firstname');
-  const mcBio = document.getElementById('mc-bio');
-  const mcLabel = document.getElementById('mc-label');
-  const mcIg = document.getElementById('mc-ig');
-  const mcGh = document.getElementById('mc-gh');
-  const mcLi = document.getElementById('mc-li');
-  const mcIgHandle = document.getElementById('mc-ig-handle');
-  const mcGhHandle = document.getElementById('mc-gh-handle');
-  const mcLiHandle = document.getElementById('mc-li-handle');
-  const mcSigImg = document.getElementById('mc-signature');
+  const mcBio       = document.getElementById('mc-bio');
+  const mcLabel     = document.getElementById('mc-label');
+  const mcIg        = document.getElementById('mc-ig');
+  const mcGh        = document.getElementById('mc-gh');
+  const mcLi        = document.getElementById('mc-li');
+  const mcIgHandle  = document.getElementById('mc-ig-handle');
+  const mcGhHandle  = document.getElementById('mc-gh-handle');
+  const mcLiHandle  = document.getElementById('mc-li-handle');
+  const mcSigImg    = document.getElementById('mc-signature');
   const mcSigPlaceholder = document.getElementById('mc-sig-placeholder');
   const mcPortfolio = document.getElementById('mc-portfolio-btn');
 
+  // Guard: skip modal setup if any required element is missing
+  const modalReady = backdrop && mcPhoto && mcFullname && mcFirstname &&
+                     mcBio && mcLabel && mcIg && mcGh && mcLi &&
+                     mcSigImg && mcSigPlaceholder && mcPortfolio;
+
   function openMemberCard(index) {
+    if (!modalReady) return;
     const m = MEMBERS[index];
     if (!m) return;
 
     // Populate
-    mcFullname.textContent = m.fullname;
+    mcFullname.textContent  = m.fullname;
     mcFirstname.textContent = m.firstname;
     mcPhoto.src = m.photo;
     mcPhoto.alt = m.fullname;
-    mcBio.textContent = m.bio;
+    mcBio.textContent   = m.bio;
     mcLabel.textContent = m.label;
 
     // Social pills
-    mcIg.href = m.ig.url;
-    mcGh.href = m.gh.url;
-    mcLi.href = m.li.url;
-    mcIgHandle.textContent = m.ig.handle;
-    mcGhHandle.textContent = m.gh.handle;
-    mcLiHandle.textContent = m.li.handle;
+    if (mcIg && m.ig) { mcIg.href = m.ig.url; if (mcIgHandle) mcIgHandle.textContent = m.ig.handle; }
+    if (mcGh && m.gh) { mcGh.href = m.gh.url; if (mcGhHandle) mcGhHandle.textContent = m.gh.handle; }
+    if (mcLi && m.li) { mcLi.href = m.li.url; if (mcLiHandle) mcLiHandle.textContent = m.li.handle; }
 
     // Signature
     if (m.signature) {
@@ -215,6 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function closeMemberCard() {
+    if (!backdrop) return;
     backdrop.classList.remove('open');
     document.body.style.overflow = '';
   }
@@ -228,9 +232,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  backdrop.addEventListener('click', e => {
-    if (e.target === backdrop) closeMemberCard();
-  });
+  if (backdrop) {
+    backdrop.addEventListener('click', e => {
+      if (e.target === backdrop) closeMemberCard();
+    });
+  }
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeMemberCard();
   });

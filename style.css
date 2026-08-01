@@ -143,22 +143,26 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* Mobile overlay */
 .mobile-menu {
-  display: none;
+  /* Always flex — hidden via visibility+opacity so CSS transition works
+     and so any viewport width is covered (not just ≤600px) */
+  display: flex;
   position: fixed;
   inset: 0;
-  background: rgba(255,255,255,.98);
-  backdrop-filter: blur(20px);
+  /* Solid white — no backdrop-filter (breaks on many Android browsers) */
+  background: #ffffff;
   z-index: 800;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 40px;
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity var(--transition);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 .mobile-menu.open {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
 .mobile-link {
@@ -679,14 +683,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ═══════════════════════════════
-   RESPONSIVE — MOBILE (≤600px)
+   RESPONSIVE — MOBILE (≤768px)
 ═══════════════════════════════ */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   :root { --nav-h: 60px; }
 
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  .mobile-menu { display: flex; }
 
   .nav-container { padding: 0 20px; }
   .section { padding: 72px 20px; }
