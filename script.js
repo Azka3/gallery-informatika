@@ -33,27 +33,27 @@ const MEMBERS = [
     portfolio: 'https://website-bootcamp.vercel.app/',
   },
   {
-    fullname: 'Member Tiga',
-    firstname: 'Member3',
-    photo: 'https://placehold.co/400x500/0f3460/ffffff?text=Member+3',
+    fullname: 'Muhammad Farhan Al-Faqih',
+    firstname: 'Alex',
+    photo: 'https://placehold.co/400x500/0f3460/ffffff?text=Alex',
     bio: 'Passionate di bidang data science dan machine learning. Suka mengeksplorasi algoritma dan problem solving.',
     label: 'Informatika – Semester 5',
-    ig: { handle: '@member3', url: 'https://instagram.com/' },
-    gh: { handle: '@member3', url: 'https://github.com/' },
-    li: { handle: '@member3', url: 'https://linkedin.com/' },
+    ig: { handle: '@-', url: '#' },
+    gh: { handle: '@-', url: '#' },
+    li: { handle: '@-', url: '#' },
     signature: '',
     portfolio: '#',
   },
   {
-    fullname: 'Member Empat',
-    firstname: 'Member4',
-    photo: 'https://placehold.co/400x500/533483/ffffff?text=Member+4',
-    bio: 'Fokus pada keamanan siber dan jaringan komputer. Senang berdiskusi dan berbagi ilmu dengan sesama.',
+    fullname: 'Rifky Dariyanto',
+    firstname: 'Rifky',
+    photo: '/gallery/rifky.jpeg',
+    bio: 'Halo! Saya seorang mahasiswa Teknik Informatika yang berfokus pada Frontend Web Development, Saya memiliki ketertarikan kuat dalam membangun tampilan web yang interaktif, responsif, dan ramah pengguna. Saat ini saya telah menguasai dasar hingga pembuatan aplikasi web menggunakan HTML, CSS, JavaScript, PHP, dan MySQL.',
     label: 'Informatika – Semester 5',
-    ig: { handle: '@member4', url: 'https://instagram.com/' },
-    gh: { handle: '@member4', url: 'https://github.com/' },
-    li: { handle: '@member4', url: 'https://linkedin.com/' },
-    signature: '',
+    ig: { handle: '@rifky_dariyanto01', url: 'https://www.instagram.com/rifky_dariyanto01?igsh=MXc5eWV4azJ5Y3h2Ng==' },
+    gh: { handle: '@-', url: '#' },
+    li: { handle: '@-', url: '#' },
+    signature: '/ttd/4.png',
     portfolio: '#',
   },
   {
@@ -62,21 +62,21 @@ const MEMBERS = [
     photo: '/gallery/sendi.jpeg',
     bio: 'Web developer yang fokus di JavaScript & Html. Aktif membangun proyek dan senang berbagi ilmu lewat mentoring teman-teman sesama mahasiswa Informatika.',
     label: 'Informatika – Semester 5',
-    ig: { handle: '@member5', url: 'https://instagram.com/' },
-    gh: { handle: '@member5', url: 'https://github.com/' },
-    li: { handle: '@member5', url: 'https://linkedin.com/' },
+    ig: { handle: '@senz_nrhdyt308', url: 'https://www.instagram.com/senz_nrhdyt308?igsh=aHluaTBheTh3M2Iw' },
+    gh: { handle: '@member5', url: '#' },
+    li: { handle: '@member5', url: '#' },
     signature: '/ttd/3.png',
     portfolio: '#',
   },
   {
-    fullname: 'Member Enam',
-    firstname: 'Member6',
-    photo: 'https://placehold.co/400x500/474787/ffffff?text=Member+6',
+    fullname: 'Helsa Anzelika Kusumah',
+    firstname: 'Helsa',
+    photo: 'https://placehold.co/400x500/474787/ffffff?text=Helsa',
     bio: 'Menyukai game development dan pemrograman kreatif. Aktif mengikuti kompetisi coding tingkat nasional.',
     label: 'Informatika – Semester 5',
-    ig: { handle: '@member6', url: 'https://instagram.com/' },
-    gh: { handle: '@member6', url: 'https://github.com/' },
-    li: { handle: '@member6', url: 'https://linkedin.com/' },
+    ig: { handle: '@-', url: '#' },
+    gh: { handle: '@-', url: '#' },
+    li: { handle: '@-', url: '#' },
     signature: '',
     portfolio: '#',
   },
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
           revealObs.unobserve(entry.target);
         }
       });
-    // threshold:0 = trigger as soon as any pixel is visible (more reliable on old browsers)
+      // threshold:0 = trigger as soon as any pixel is visible (more reliable on old browsers)
     }, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
     revealEls.forEach(el => {
       if (!el.classList.contains('visible')) revealObs.observe(el);
@@ -184,26 +184,26 @@ document.addEventListener('DOMContentLoaded', () => {
   buildPeopleGrid();
 
   /* ─── 5. MEMBER CARD MODAL ─── */
-  const backdrop    = document.getElementById('member-modal-backdrop');
-  const mcPhoto     = document.getElementById('mc-photo');
-  const mcFullname  = document.getElementById('mc-fullname');
+  const backdrop = document.getElementById('member-modal-backdrop');
+  const mcPhoto = document.getElementById('mc-photo');
+  const mcFullname = document.getElementById('mc-fullname');
   const mcFirstname = document.getElementById('mc-firstname');
-  const mcBio       = document.getElementById('mc-bio');
-  const mcLabel     = document.getElementById('mc-label');
-  const mcIg        = document.getElementById('mc-ig');
-  const mcGh        = document.getElementById('mc-gh');
-  const mcLi        = document.getElementById('mc-li');
-  const mcIgHandle  = document.getElementById('mc-ig-handle');
-  const mcGhHandle  = document.getElementById('mc-gh-handle');
-  const mcLiHandle  = document.getElementById('mc-li-handle');
-  const mcSigImg    = document.getElementById('mc-signature');
+  const mcBio = document.getElementById('mc-bio');
+  const mcLabel = document.getElementById('mc-label');
+  const mcIg = document.getElementById('mc-ig');
+  const mcGh = document.getElementById('mc-gh');
+  const mcLi = document.getElementById('mc-li');
+  const mcIgHandle = document.getElementById('mc-ig-handle');
+  const mcGhHandle = document.getElementById('mc-gh-handle');
+  const mcLiHandle = document.getElementById('mc-li-handle');
+  const mcSigImg = document.getElementById('mc-signature');
   const mcSigPlaceholder = document.getElementById('mc-sig-placeholder');
   const mcPortfolio = document.getElementById('mc-portfolio-btn');
 
   // Guard: skip modal setup if any required element is missing
   const modalReady = backdrop && mcPhoto && mcFullname && mcFirstname &&
-                     mcBio && mcLabel && mcIg && mcGh && mcLi &&
-                     mcSigImg && mcSigPlaceholder && mcPortfolio;
+    mcBio && mcLabel && mcIg && mcGh && mcLi &&
+    mcSigImg && mcSigPlaceholder && mcPortfolio;
 
   function openMemberCard(index) {
     if (!modalReady) return;
@@ -211,11 +211,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!m) return;
 
     // Populate
-    mcFullname.textContent  = m.fullname;
+    mcFullname.textContent = m.fullname;
     mcFirstname.textContent = m.firstname;
     mcPhoto.src = m.photo;
     mcPhoto.alt = m.fullname;
-    mcBio.textContent   = m.bio;
+    mcBio.textContent = m.bio;
     mcLabel.textContent = m.label;
 
     // Social pills
