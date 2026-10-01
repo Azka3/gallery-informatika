@@ -30,7 +30,7 @@ const MEMBERS = [
     gh: { handle: '@azkazk', url: 'https://github.com/Azka3' },
     li: { handle: '@azkazakiyyan', url: 'https://www.linkedin.com/in/azka-zakiyyan-2926863b1?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
     signature: '/ttd/2.png',
-    portfolio: 'https://website-bootcamp.vercel.app/',
+    portfolio: 'https://portfolio-azka-six.vercel.app/',
   },
   {
     fullname: 'Muhammad Farhan Al-Faqih',
